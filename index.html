@@ -757,34 +757,52 @@
 
         /* 3D-флип контейнеры */
         .mail-box {
-            perspective: 1200px;
-            height: 380px;
-            cursor: pointer;
-        }
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    height: 380px;
+    cursor: pointer;
+}
 
         .mail-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
-        }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /* фикс для мобильных: явно указываем, что дочерние элементы 3D */
+    will-change: transform;
+}
 
         /* Класс активации переворота */
         .mail-box.flipped .mail-inner {
-            transform: rotateY(180deg);
-        }
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
 
         .mail-front, .mail-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 12px;
-            box-shadow: var(--shadow-cozy);
-        }
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-cozy);
+}
+    .mail-back {
+    background-color: #FAF6F0;
+    border: 2px solid #E3DDD3;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
         /* Стилизация фронта под армейский треугольник */
         .mail-front {
             background-color: #DFD9CE;
