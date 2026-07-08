@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Добро пожаловать домой, папа!</title>
-    <!-- Подключение красивых шрифтов: Pacifico для семейных заголовков и Montserrat для основного текста -->
+    <!-- Подключение красивых шрифтов: Pacifico для семейных заголовков и писем, Montserrat для основного текста -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
@@ -118,6 +118,158 @@
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+
+        /* --- СЕКЦИЯ: ШУТОЧНЫЙ ПРИКАЗ №1 --- */
+        .section-order {
+            padding: 100px 20px;
+            background-color: var(--color-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .order-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #FAF0E4; /* Цвет старой бумаги */
+            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 4px;
+            border: 3px double var(--color-primary);
+            padding: 50px 40px;
+            box-shadow: 0 10px 25px rgba(44, 53, 48, 0.08);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order-header {
+            text-align: center;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .order-title {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 800;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .order-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .order-subject {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--color-primary-light);
+            font-style: italic;
+        }
+
+        .order-preamble {
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .order-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .order-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .order-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--color-primary);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .order-interactive-area {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 120px;
+            margin-top: 20px;
+        }
+
+        /* Кнопка принятия к исполнению */
+        .btn-order-accept {
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(59, 83, 62, 0.2);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .btn-order-accept:hover {
+            background-color: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 83, 62, 0.3);
+        }
+
+        .btn-order-accept.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+
+        /* Стилизация печати */
+        .order-stamp {
+            position: absolute;
+            border: 3px dashed #C33C3C;
+            border-radius: 8px;
+            color: #C33C3C;
+            padding: 12px 24px;
+            font-family: var(--font-accent);
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            text-transform: none;
+            opacity: 0;
+            transform: scale(3) rotate(-30deg);
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+            background-color: rgba(250, 240, 228, 0.85);
+            box-shadow: 0 0 10px rgba(195, 60, 60, 0.1);
+        }
+
+        .order-stamp.stamped {
+            opacity: 1;
+            transform: scale(1) rotate(-5deg);
         }
 
         /* --- ИНТЕРАКТИВНЫЙ ТАЙМЛАЙН --- */
@@ -873,6 +1025,14 @@
 
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
+            .order-container {
+                padding: 30px 20px;
+            }
+            .order-meta {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
             .timeline-line {
                 left: 20px;
             }
@@ -896,7 +1056,7 @@
                 border-left: 1px solid rgba(74, 107, 81, 0.05) !important;
                 border-bottom: 1px solid rgba(74, 107, 81, 0.05) !important;
             }
-            .section-timeline, .section-gallery, .section-slider, .section-archive, .section-mail {
+            .section-timeline, .section-gallery, .section-slider, .section-archive, .section-mail, .section-order {
                 padding: 60px 15px;
             }
         }
@@ -914,12 +1074,43 @@
             <h1 class="hero-title">Папа, с возвращением домой!</h1>
             <p class="hero-subtitle">Мы так сильно тебя ждали и очень скучали каждый день!</p>
         </div>
-        <a href="#timeline" class="scroll-down">
+        <a href="#order" class="scroll-down">
             <span>Листай вниз</span>
             <svg viewBox="0 0 24 24">
                 <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6,-6L7.41,8.59z"/>
             </svg>
         </a>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ШУТОЧНЫЙ «ПРИКАЗ №1»                       -->
+    <!-- ========================================== -->
+    <section class="section-order" id="order">
+        <div class="order-container">
+            <div class="order-header">
+                <h2 class="order-title">Приказ верховного семейного командования №1</h2>
+                <div class="order-meta">
+                    <span>г. Липецк</span>
+                    <span>Июль 2026 года</span>
+                </div>
+            </div>
+            
+            <h3 class="order-subject">«О вступлении в должность Главного Отдыхающего»</h3>
+            
+            <p class="order-preamble">В связи с долгожданным прибытием Артёма домой в расположение семьи сроком на 1 календарный месяц, <strong>ПРИКАЗЫВАЮ:</strong></p>
+            
+            <ul class="order-list">
+                <li>Назначить Артёма Верховным Главнокомандующим домашним уютом и присвоить звание «Генерал Диванных Войск».</li>
+                <li>Немедленно освободить Артёма от всех видов бытовых нарядов (включая мытье посуды, уборку и вынос мусора) на весь период пребывания (30 дней).</li>
+                <li>Вменить в ежедневные обязанности: сон до обеда, круглосуточное поглощение любимой еды, душевные разговоры с женой и сыновьями и отдых на 100%.</li>
+                <li>Контроль за исполнением приказа возложить на сыновей — Ярослава и брата.</li>
+            </ul>
+
+            <div class="order-interactive-area">
+                <button class="btn-order-accept" id="orderAcceptBtn" onclick="applyOrderStamp()">Принять к исполнению</button>
+                <div class="order-stamp" id="orderStamp">Подписано. Главнокомандующий Артём</div>
+            </div>
+        </div>
     </section>
 
     <!-- ========================================== -->
@@ -1193,6 +1384,20 @@
     <!-- СЦЕНАРИИ И ИНТЕРАКТИВ (JAVASCRIPT)        -->
     <!-- ========================================== -->
     <script>
+        // --- ПРИНЯТЬ ПРИКАЗ К ИСПОЛНЕНИЮ (ПОЯВЛЕНИЕ ПЕЧАТИ) ---
+        function applyOrderStamp() {
+            const btn = document.getElementById('orderAcceptBtn');
+            const stamp = document.getElementById('orderStamp');
+            
+            // Плавное исчезновение кнопки
+            btn.classList.add('hidden');
+            
+            // Эффект удара печатью с микро-задержкой
+            setTimeout(() => {
+                stamp.classList.add('stamped');
+            }, 300);
+        }
+
         // --- 1. ПАРАЛЛАКС ДЛЯ ГЛАВНОГО КАРТИНКИ ---
         const heroBg = document.getElementById('heroBg');
         window.addEventListener('scroll', () => {
