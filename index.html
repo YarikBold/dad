@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Добро пожаловать домой, папа!</title>
-    <!-- Подключение красивых шрифтов: Pacifico для семейных заголовков и писем, Montserrat для основного текста -->
+    <!-- Подключение шрифтов: Pacifico для семейных заголовков и писем, Montserrat для основного текста -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
     
     <style>
         /* --- ОСНОВНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ --- */
@@ -63,7 +63,6 @@
             left: 0;
             width: 100%;
             height: 120%;
-            /* ЗДЕСЬ ВЫ МОЖЕТЕ ЗАМЕНИТЬ ССЫЛКУ НА ВАШУ ФОТОГРАФИЮ ДОМА ИЛИ ОБЩЕЙ СЕМЬИ */
             background-image: linear-gradient(rgba(59, 83, 62, 0.45), rgba(44, 53, 48, 0.6)), 
                               url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
@@ -97,7 +96,6 @@
             letter-spacing: 1px;
         }
 
-        /* Уютная стрелочка вниз */
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -133,7 +131,7 @@
         .order-container {
             max-width: 800px;
             width: 100%;
-            background-color: #FAF0E4; /* Цвет старой бумаги */
+            background-color: #FAF0E4; /* Эффект старой бумаги */
             background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
             background-size: 8px 8px;
             background-position: 0 0, 4px 4px;
@@ -219,7 +217,6 @@
             margin-top: 20px;
         }
 
-        /* Кнопка принятия к исполнению */
         .btn-order-accept {
             font-family: var(--font-main);
             font-weight: 700;
@@ -249,7 +246,6 @@
             position: absolute;
         }
 
-        /* Стилизация печати */
         .order-stamp {
             position: absolute;
             border: 3px dashed #C33C3C;
@@ -323,7 +319,7 @@
             font-family: var(--font-main);
             font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 800;
-            color: var(--color-accent-gold); /* Светящийся золотистый */
+            color: var(--color-accent-gold);
             text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
             line-height: 1;
             margin-bottom: 4px;
@@ -344,7 +340,7 @@
             padding: 20px;
         }
 
-        /* --- ИНТЕРАКТИВНЫЙ ТАЙМЛАЙТ --- */
+        /* --- ИНТЕРАКТИВНЫЙ ТАЙМЛАЙН --- */
         .section-timeline {
             padding: 100px 20px;
             position: relative;
@@ -373,7 +369,6 @@
             margin: 0 auto;
         }
 
-        /* Центральная направляющая линия в стиле хаки/оливка */
         .timeline-line {
             position: absolute;
             left: 50%;
@@ -397,7 +392,6 @@
             justify-content: flex-start;
         }
 
-        /* Точки на таймлайне */
         .timeline-dot {
             position: absolute;
             left: 50%;
@@ -420,7 +414,6 @@
             transform: translateX(-50%) scale(1.2);
         }
 
-        /* Карточка таймлайна */
         .timeline-card {
             width: 45%;
             background: #ffffff;
@@ -476,7 +469,6 @@
             object-fit: cover;
         }
 
-        /* Декоративная стрелочка у карточки */
         .timeline-card::after {
             content: '';
             position: absolute;
@@ -532,7 +524,6 @@
             box-shadow: 0 5px 15px rgba(59, 83, 62, 0.2);
         }
 
-        /* Контейнер слайдов с эффектом плавного затухания */
         .slider-window {
             position: relative;
             max-width: 700px;
@@ -560,7 +551,6 @@
             pointer-events: auto;
         }
 
-        /* Сплит-изображения */
         .split-container {
             position: relative;
             width: 100%;
@@ -579,24 +569,21 @@
             pointer-events: none;
         }
 
-        /* "Тогда" картинка (фоновая, слева) */
         .split-img.img-then {
             z-index: 1;
         }
 
-        /* "Сейчас" картинка (поверх, справа) */
         .split-img.img-now {
             z-index: 2;
-            width: 50%; /* Будет меняться скриптом */
+            width: 50%;
             border-right: 4px solid var(--color-accent-gold);
         }
 
-        /* Ползунок-разделитель */
         .slider-handle {
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 50%; /* Будет меняться скриптом */
+            left: 50%;
             width: 4px;
             background-color: var(--color-accent-gold);
             z-index: 3;
@@ -605,7 +592,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
-        /* Кнопка на ползунке */
         .slider-button {
             position: absolute;
             top: 50%;
@@ -620,21 +606,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-            transition: transform 0.2s ease;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
-        .slider-handle:hover .slider-button,
-        .slider-handle:active .slider-button {
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .slider-button svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--color-text-light);
-        }
-
-        /* Этикетки «Тогда» и «Сейчас» */
         .label-then, .label-now {
             position: absolute;
             bottom: 20px;
@@ -669,7 +645,6 @@
             padding: 40px 10px;
         }
 
-        /* Polaroid-карточки со случайными углами вращения */
         .polaroid-card {
             background: #ffffff;
             padding: 16px 16px 28px 16px;
@@ -681,7 +656,10 @@
             z-index: 1;
         }
 
-        /* Придаем случайные повороты */
+        .polaroid-card:text {
+            pointer-events: none;
+        }
+
         .polaroid-card:nth-child(1) { transform: rotate(-2.5deg); }
         .polaroid-card:nth-child(2) { transform: rotate(1.8deg); }
         .polaroid-card:nth-child(3) { transform: rotate(-1.5deg); }
@@ -712,7 +690,6 @@
             min-height: 28px;
         }
 
-        /* Интерактивный фокус на карточку */
         .polaroid-card:hover {
             transform: rotate(0deg) translateY(-12px) scale(1.05);
             box-shadow: 0 20px 45px rgba(44, 53, 48, 0.2);
@@ -723,7 +700,6 @@
             filter: sepia(0%) contrast(100%);
         }
 
-        /* Декоративный прозрачный скотч сверху карточки */
         .polaroid-card::before {
             content: '';
             position: absolute;
@@ -739,8 +715,7 @@
         }
 
 
-        /* --- СЕКЦИЯ ПОЛЕВОЙ ПОЧТЫ (КОНВЕРТЫ) --- */
-            
+        /* --- СЕКЦИЯ ПОЛЕВОЙ ПОЧТЫ (КОНВЕРТЫ) - СТАБИЛЬНЫЙ CSS ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ --- */
         .section-mail {
             padding: 100px 20px;
             background-color: #EDE8E0;
@@ -753,57 +728,48 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
+            /* Обеспечиваем перспективу для стабильной 3D трансформации */
+            perspective: 1200px;
         }
 
-        /* 3D-флип контейнеры */
         .mail-box {
-    -webkit-perspective: 1200px;
-    perspective: 1200px;
-    height: 380px;
-    cursor: pointer;
-}
+            height: 380px;
+            cursor: pointer;
+            perspective: 1200px;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
 
         .mail-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    /* фикс для мобильных: явно указываем, что дочерние элементы 3D */
-    will-change: transform;
-}
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
 
-        /* Класс активации переворота */
+        /* 3D-переворот по клику */
         .mail-box.flipped .mail-inner {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
 
+        /* Стороны конверта */
         .mail-front, .mail-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 12px;
-    box-shadow: var(--shadow-cozy);
-}
-    .mail-back {
-    background-color: #FAF6F0;
-    border: 2px solid #E3DDD3;
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-        /* Стилизация фронта под армейский треугольник */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-cozy);
+            /* Скрываем заднюю часть при перевороте */
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            overflow: hidden;
+        }
+
+        /* Лицевая сторона */
         .mail-front {
             background-color: #DFD9CE;
             border: 2px solid #C4BEB3;
@@ -812,10 +778,11 @@
             align-items: center;
             justify-content: center;
             padding: 25px;
-            overflow: hidden;
+            z-index: 2;
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
         }
 
-        /* Рисунок треугольного письма-сгиба */
         .triangle-design {
             width: 0;
             height: 0;
@@ -878,24 +845,33 @@
             animation: pulse 1.5s infinite;
         }
 
-        /* Задняя сторона с письмом */
+        /* Задняя сторона (содержимое письма) */
         .mail-back {
             background-color: #FAF6F0;
             border: 2px solid #E3DDD3;
-            transform: rotateY(180deg);
             padding: 30px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            z-index: 1;
+            /* Разворачиваем заднюю карту изначально */
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
         }
 
+        /* Стабилизация содержимого письма на мобильных */
         .letter-content {
             font-size: 0.95rem;
             color: var(--color-text-dark);
             font-style: italic;
             line-height: 1.7;
             text-align: center;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            /* Исключаем наложение путем легкого сдвига в 3D пространстве */
+            transform: translateZ(1px);
+            -webkit-transform: translateZ(1px);
         }
 
         .letter-author {
@@ -903,13 +879,16 @@
             font-size: 1.4rem;
             color: var(--color-primary-light);
             margin-top: 25px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(1px);
+            -webkit-transform: translateZ(1px);
         }
 
 
         /* --- ФИНАЛЬНЫЙ БЛОК И КНОПКА САЛЮТА --- */
         .section-final {
             padding: 120px 20px;
-            /* Очень красивый хвойно-зеленый темный градиент */
             background: radial-gradient(circle, #1F2D22 0%, #0D1610 100%);
             color: var(--color-text-light);
             text-align: center;
@@ -956,7 +935,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Золотая кнопка запуска */
         .btn-firework {
             font-family: var(--font-main);
             font-weight: 700;
@@ -978,7 +956,7 @@
             transform: scale(1.08);
             box-shadow: 0 0 40px rgba(212, 175, 55, 0.7);
         }
-        
+
         .btn-firework:active {
             transform: scale(0.98);
         }
@@ -1005,7 +983,6 @@
             height: 100%;
         }
 
-        /* Контент поверх салюта */
         .celebration-overlay {
             position: absolute;
             top: 50%;
@@ -1048,7 +1025,6 @@
             transition: all 1.2s ease 1.5s;
         }
 
-        /* Кнопка закрытия */
         .btn-close-celebration {
             position: absolute;
             bottom: 40px;
@@ -1085,7 +1061,7 @@
             margin-bottom: 10px;
         }
 
-        /* --- ВСПОМОГАТЕЛЬНЫЕ КЛЮЧЕВЫЕ КАДРЫ --- */
+        /* --- ВСПОМОГАТЕЛЬНЫЕ КЛЮЧЕВЫЕ КАДРЫ И АНИМАЦИИ --- */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -1160,7 +1136,6 @@
     <!-- ГЛАВНЫЙ ЭКРАН (HERO SECTION)               -->
     <!-- ========================================== -->
     <section class="hero" id="home">
-        <!-- ТУТ МОЖНО ЗАМЕНИТЬ ФОН ГЛАВНОГО ЭКРАНА (ПОДСТАВЬТЕ ССЫЛКУ ВМЕСТО URL) -->
         <div class="hero-bg" id="heroBg"></div>
         <div class="hero-content">
             <h1 class="hero-title">Папа, с возвращением домой!</h1>
@@ -1195,7 +1170,7 @@
                 <li>Назначить Артёма Верховным Главнокомандующим домашним уютом и присвоить звание «Генерал Диванных Войск».</li>
                 <li>Немедленно освободить Артёма от всех видов бытовых нарядов (включая мытье посуды, уборку и вынос мусора) на весь период пребывания (30 дней).</li>
                 <li>Вменить в ежедневные обязанности: сон до обеда, круглосуточное поглощение любимой еды, душевные разговоры с женой и сыновьями и отдых на 100%.</li>
-                <li>Контроль за исполнением приказа возложить на сыновей — Ярослава и брата.</li>
+                <li>Контроль за исполнением приказа возложить на сыновей — Ярослава и брата Андрея.</li>
             </ul>
 
             <div class="order-interactive-area">
@@ -1248,7 +1223,6 @@
                     <span class="timeline-date">Январь</span>
                     <p class="timeline-text">Мы встретили Новый год и загадали наше самое заветное желание — чтобы ты поскорее вернулся живым и здоровым. За праздничным столом все тосты были только о тебе!</p>
                     <div class="timeline-img-placeholder">
-                        <!-- ТУТ МОЖНО ВСТАВИТЬ СВОЮ ССЫЛКУ НА ФОТО В src="..." -->
                         <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=600&auto=format&fit=crop" alt="Новый Год">
                     </div>
                 </div>
@@ -1261,7 +1235,6 @@
                     <span class="timeline-date">Март</span>
                     <p class="timeline-text">Мама испекла твой любимый яблочный пирог. Мы пили чай, вспоминали твои забавные армейские истории, твои шутки и то, как ты всегда умеешь поднять нам всем настроение.</p>
                     <div class="timeline-img-placeholder">
-                        <!-- ТУТ МОЖНО ВСТАВИТЬ СВОЮ ССЫЛКУ НА ФОТО В src="..." -->
                         <img src="https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=600&auto=format&fit=crop" alt="Семейный пирог">
                     </div>
                 </div>
@@ -1274,7 +1247,6 @@
                     <span class="timeline-date">Май</span>
                     <p class="timeline-text">Мы посадили молодую яблоньку в нашем саду. Назвали её в честь этого года. Она отлично прижилась и совсем недавно дала свои самые первые весенние зелёные листочки!</p>
                     <div class="timeline-img-placeholder">
-                        <!-- ТУТ МОЖНО ВСТАВИТЬ СВОЮ ССЫЛКУ НА ФОТО В src="..." -->
                         <img src="https://images.unsplash.com/photo-1460533076114-0a4a72852794?q=80&w=600&auto=format&fit=crop" alt="Яблоня в саду">
                     </div>
                 </div>
@@ -1287,7 +1259,6 @@
                     <span class="timeline-date">Июнь</span>
                     <p class="timeline-text">Начало лета! Мы начали вовсю готовиться к твоему приезду: перебирали вещи, строили планы на совместные поездки на рыбалку и просто не могли усидеть на месте от счастья.</p>
                     <div class="timeline-img-placeholder">
-                        <!-- ТУТ МОЖНО ВСТАВИТЬ СВОЮ ССЫЛКУ НА ФОТО В src="..." -->
                         <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Лето">
                     </div>
                 </div>
@@ -1305,8 +1276,8 @@
 
         <!-- Переключатели вкладок -->
         <div class="slider-tabs">
-            <button class="tab-btn active" onclick="switchSliderTab('yaroslav')">Ярослав</button>
-            <button class="tab-btn" onclick="switchSliderTab('brother')">Андрей</button>
+            <button class="tab-btn active" id="btn-yaroslav" onclick="switchSliderTab('yaroslav')">Ярослав</button>
+            <button class="tab-btn" id="btn-andrey" onclick="switchSliderTab('andrey')">Андрей</button>
         </div>
 
         <div class="slider-window">
@@ -1314,41 +1285,35 @@
             <!-- Слайд 1: Ярослав -->
             <div class="slide-wrapper active" id="slide-yaroslav">
                 <div class="split-container" id="split-yaroslav">
-                    <!-- Заднее изображение: Ярослав "Тогда" (Детство) [Обновлено прямой ссылкой] -->
+                    <!-- Заднее изображение: Ярослав "Тогда" (Детство) -->
                     <div class="split-img img-then" style="background-image: url('https://i.postimg.cc/VspWrJk4/a-togda.jpg');"></div>
                     
-                    <!-- Переднее изображение: Ярослав "Сейчас" (Современное) [Обновлено прямой ссылкой] -->
+                    <!-- Переднее изображение: Ярослав "Сейчас" (Современное) -->
                     <div class="split-img img-now" style="background-image: url('https://i.postimg.cc/wBwh6vrY/a-sejcas.jpg');"></div>
                     
                     <div class="label-then">ТОГДА</div>
                     <div class="label-now">СЕЙЧАС</div>
                     
                     <div class="slider-handle">
-                        <div class="slider-button">
-                            <svg viewBox="0 0 24 24"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
-                        </div>
+                        <div class="slider-button">↔</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Слайд 2: Брат -->
-            <div class="slide-wrapper" id="slide-brother">
-                <div class="split-container" id="split-brother">
-                    <!-- Заднее изображение: Брат "Тогда" (Детство) -->
-                    <!-- ФОТО БРАТА ТУТ (Замените URL внутри скобок, когда найдете снимки) -->
+            <!-- Слайд 2: Андрей -->
+            <div class="slide-wrapper" id="slide-andrey">
+                <div class="split-container" id="split-andrey">
+                    <!-- Заднее изображение: Андрей "Тогда" (Детство) -->
                     <div class="split-img img-then" style="background-image: url('https://i.postimg.cc/R0WcZ9xd/brat-togda.jpg');"></div>
                     
-                    <!-- Переднее изображение: Брат "Сейчас" (Современное) -->
-                    <!-- ФОТО БРАТА ТУТ (Замените URL внутри скобок, когда найдете снимки) -->
+                    <!-- Переднее изображение: Андрей "Сейчас" (Современное) -->
                     <div class="split-img img-now" style="background-image: url('https://i.postimg.cc/wjGmPPRk/brat-sejcas.jpg');"></div>
                     
                     <div class="label-then">ТОГДА</div>
                     <div class="label-now">СЕЙЧАС</div>
                     
                     <div class="slider-handle">
-                        <div class="slider-button">
-                            <svg viewBox="0 0 24 24"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
-                        </div>
+                        <div class="slider-button">↔</div>
                     </div>
                 </div>
             </div>
@@ -1364,7 +1329,7 @@
         <p class="section-subtitle">Наведи на снимки, чтобы выровнять их и рассмотреть поближе</p>
 
         <div class="archive-container">
-            <!-- КАРТОЧКА 1: 2004 год (Папина молодость) [Обновлено прямой ссылкой] -->
+            <!-- КАРТОЧКА 1: 2004 год (Папина молодость) -->
             <div class="polaroid-card">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/V6FTqB2Q/2004.jpg" alt="Папина молодость">
@@ -1372,7 +1337,7 @@
                 <div class="polaroid-text">2004. Папина молодость</div>
             </div>
 
-            <!-- КАРТОЧКА 2: 2016 год (Брату ровно год, банда растет) [Обновлено прямой ссылкой] -->
+            <!-- КАРТОЧКА 2: 2016 год (Брату ровно год, банда растет) -->
             <div class="polaroid-card">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/1t46Byjy/DSC04278.jpg" alt="Брату год">
@@ -1380,7 +1345,7 @@
                 <div class="polaroid-text">2016. Брату ровно год, банда растет</div>
             </div>
 
-            <!-- КАРТОЧКА 3: 2018 год (Счастливые моменты вместе) [Обновлено прямой ссылкой] -->
+            <!-- КАРТОЧКА 3: 2018 год (Счастливые моменты вместе) -->
             <div class="polaroid-card">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/qRmwBm9B/2018.jpg" alt="Счастливые моменты">
@@ -1388,7 +1353,7 @@
                 <div class="polaroid-text">2018. Счастливые моменты вместе</div>
             </div>
 
-            <!-- КАРТОЧКА 4: 2022-2023 года (Мы выросли и очень тобой гордимся) [Обновлено прямой ссылкой] -->
+            <!-- КАРТОЧКА 4: 2022-2023 года (Мы выросли и очень тобой гордимся) -->
             <div class="polaroid-card">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/bwXTvSFH/2023.jpg" alt="Мы выросли">
@@ -1419,7 +1384,7 @@
                     </div>
                     <div class="mail-back">
                         <p class="letter-content">"Дорогой мой! Каждый день без тебя тянулся бесконечно. Но наша любовь и вера согревали меня. Я невероятно счастлива знать, что ты наконец-то дома, в безопасности, на своём любимом месте. Добро пожаловать домой, родной!"</p>
-                        <h4 class="letter-author">Твоя любящая жена ❤️</h4>
+                        <h4 class="letter-author">Твой любящая жена ❤️</h4>
                     </div>
                 </div>
             </div>
@@ -1446,8 +1411,8 @@
                 <div class="mail-inner">
                     <div class="mail-front">
                         <div class="triangle-design"></div>
-                        <div class="mail-stamp">Брат</div>
-                        <h3 class="mail-sender">От брата</h3>
+                        <div class="mail-stamp">Андрей</div>
+                        <h3 class="mail-sender">От Андрея</h3>
                         <p class="mail-address">Супергерою семьи</p>
                         <div class="mail-action">Открыть письмо ✨</div>
                     </div>
@@ -1502,7 +1467,7 @@
         // Инициализация состояний при загрузке страницы
         document.addEventListener('DOMContentLoaded', () => {
             setupSliderDrag('split-yaroslav');
-            setupSliderDrag('split-brother');
+            setupSliderDrag('split-andrey');
             checkStoredOrderStatus();
         });
 
@@ -1510,16 +1475,15 @@
         function checkStoredOrderStatus() {
             const storedStartTime = localStorage.getItem('vacation_start_time');
             if (storedStartTime) {
-                // Прячем кнопку «Принять к исполнению» без анимации
                 const btn = document.getElementById('orderAcceptBtn');
-                btn.style.display = 'none';
+                if (btn) btn.style.display = 'none';
                 
-                // Сразу штампуем печать «Подписано»
                 const stamp = document.getElementById('orderStamp');
-                stamp.classList.add('stamped');
-                stamp.style.transition = 'none'; // Без анимации удара при повторном входе
+                if (stamp) {
+                    stamp.classList.add('stamped');
+                    stamp.style.transition = 'none'; // Удар без анимации при повторном входе
+                }
                 
-                // Запускаем счётчик
                 showAndRunTimer(parseInt(storedStartTime));
             }
         }
@@ -1529,20 +1493,16 @@
             const btn = document.getElementById('orderAcceptBtn');
             const stamp = document.getElementById('orderStamp');
             
-            // Записываем точное текущее время в localStorage, если его еще нет
             let startTime = localStorage.getItem('vacation_start_time');
             if (!startTime) {
                 startTime = Date.now();
                 localStorage.setItem('vacation_start_time', startTime.toString());
             }
 
-            // Плавное исчезновение кнопки
             btn.classList.add('hidden');
             
-            // Эффект удара печатью с микро-задержкой
             setTimeout(() => {
                 stamp.classList.add('stamped');
-                // Плавно проявляем и запускаем счётчик времени
                 showAndRunTimer(parseInt(startTime));
             }, 300);
         }
@@ -1550,23 +1510,21 @@
         // Показ панели счётчика и запуск обратного отсчета
         function showAndRunTimer(startTimeMs) {
             const timerSection = document.getElementById('orderTimerSection');
-            timerSection.classList.add('visible');
+            if (timerSection) timerSection.classList.add('visible');
 
-            // Конечная дата рассчитывается как старт + 30 полных суток (30 * 24 * 60 * 60 * 1000)
+            // Конечная дата рассчитывается как старт + 30 суток (30 * 24 * 60 * 60 * 1000)
             const vacationDurationMs = 30 * 24 * 60 * 60 * 1000;
             const targetTimeMs = startTimeMs + vacationDurationMs;
 
-            // Сразу же выполняем первый расчет
             updateCountdown(targetTimeMs);
 
-            // Обновляем каждую секунду
             clearInterval(countdownInterval);
             countdownInterval = setInterval(() => {
                 updateCountdown(targetTimeMs);
             }, 1000);
         }
 
-        // Функция математического расчета и вывода времени
+        // Вычисление оставшегося времени
         function updateCountdown(targetTimeMs) {
             const now = Date.now();
             const difference = targetTimeMs - now;
@@ -1579,31 +1537,28 @@
             const expireMsg = document.getElementById('timerExpireMsg');
 
             if (difference <= 0) {
-                // Если 30 дней истекли
                 clearInterval(countdownInterval);
-                timerBoard.style.display = 'none';
-                expireMsg.style.display = 'block';
+                if (timerBoard) timerBoard.style.display = 'none';
+                if (expireMsg) expireMsg.style.display = 'block';
                 return;
             }
 
-            // Иначе раскладываем оставшиеся миллисекунды по шкалам времени
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            // Красивое форматирование с добавлением ведущего нуля (04 дня, 09 секунд)
-            daysElement.textContent = days.toString().padStart(2, '0');
-            hoursElement.textContent = hours.toString().padStart(2, '0');
-            minutesElement.textContent = minutes.toString().padStart(2, '0');
-            secondsElement.textContent = seconds.toString().padStart(2, '0');
+            if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
+            if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
+            if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
+            if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
         }
 
         // --- 1. ПАРАЛЛАКС ДЛЯ ГЛАВНОГО КАРТИНКИ ---
         const heroBg = document.getElementById('heroBg');
         window.addEventListener('scroll', () => {
             const scrollPos = window.pageYOffset;
-            heroBg.style.transform = `translateY(${scrollPos * 0.45}px)`;
+            if (heroBg) heroBg.style.transform = `translateY(${scrollPos * 0.45}px)`;
         });
 
         // --- 2. ИНТЕРАКТИВ ДЛЯ ТАЙМЛАЙНА ---
@@ -1617,85 +1572,70 @@
                 item.classList.add('active');
             };
 
-            card.addEventListener('click', activate);
-            dot.addEventListener('click', activate);
+            if (card) card.addEventListener('click', activate);
+            if (dot) dot.addEventListener('click', activate);
         });
 
         // --- 3. ЛОГИКА РАБОТЫ СЛАЙДЕРА "ТОГДА И СЕЙЧАС" ---
-        function switchSliderTab(tabName) {
-            // Переключение кнопок вкладок
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Находим нажатую кнопку по тексту
-            const currentBtn = Array.from(buttons).find(b => b.textContent.toLowerCase().includes(tabName === 'yaroslav' ? 'ярослав' : 'брат'));
-            if (currentBtn) currentBtn.classList.add('active');
+        function switchSliderTab(person) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${person}`);
+            if (activeBtn) activeBtn.classList.add('active');
 
-            // Плавное переключение слайдов
-            const slides = document.querySelectorAll('.slide-wrapper');
-            slides.forEach(slide => slide.classList.remove('active'));
-
-            const targetSlide = document.getElementById(`slide-${tabName}`);
-            if (targetSlide) {
-                targetSlide.classList.add('active');
+            document.querySelectorAll('.slide-wrapper').forEach(slide => slide.classList.remove('active'));
+            const activeSlide = document.getElementById(`slide-${person}`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
                 
                 // Сбрасываем ползунок в центр при переключении
-                const splitContainer = targetSlide.querySelector('.split-container');
+                const splitContainer = activeSlide.querySelector('.split-container');
                 const imgNow = splitContainer.querySelector('.img-now');
                 const handle = splitContainer.querySelector('.slider-handle');
                 
-                imgNow.style.width = '50%';
-                handle.style.left = '50%';
+                if (imgNow) imgNow.style.width = '50%';
+                if (handle) handle.style.left = '50%';
             }
         }
 
-        // Логика перетаскивания (Drag & Swipe) для сплит-экранов
         function setupSliderDrag(containerId) {
             const container = document.getElementById(containerId);
+            if (!container) return;
             const imgNow = container.querySelector('.img-now');
             const handle = container.querySelector('.slider-handle');
-            let isDragging = false;
-
+            
             function moveSlider(clientX) {
                 const rect = container.getBoundingClientRect();
                 let position = ((clientX - rect.left) / rect.width) * 100;
-                
-                // Ограничиваем в разумных пределах
-                if (position < 0) position = 0;
-                if (position > 100) position = 100;
-
-                imgNow.style.width = `${position}%`;
-                handle.style.left = `${position}%`;
+                position = Math.max(0, Math.min(100, position));
+                if (imgNow) imgNow.style.width = `${position}%`;
+                if (handle) handle.style.left = `${position}%`;
             }
 
-            // Настольные события мыши
-            handle.addEventListener('mousedown', () => { isDragging = true; });
-            window.addEventListener('mouseup', () => { isDragging = false; });
-            window.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                moveSlider(e.clientX);
-            });
+            const startDrag = (e) => {
+                const moveHandler = (moveEvent) => {
+                    const clientX = moveEvent.clientX || (moveEvent.touches && moveEvent.touches[0].clientX);
+                    if (clientX) moveSlider(clientX);
+                };
+                const stopHandler = () => {
+                    window.removeEventListener('mousemove', moveHandler);
+                    window.removeEventListener('touchmove', moveHandler);
+                };
+                window.addEventListener('mousemove', moveHandler);
+                window.addEventListener('touchmove', moveHandler, {passive: false});
+                window.addEventListener('mouseup', stopHandler, {once: true});
+                window.addEventListener('touchend', stopHandler, {once: true});
+            };
 
-            // Поддержка сенсорных экранов смартфонов
-            handle.addEventListener('touchstart', () => { isDragging = true; });
-            window.addEventListener('touchend', () => { isDragging = false; });
-            window.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                moveSlider(e.touches[0].clientX);
-            });
-            
-            // Клик по контейнеру для быстрого перемещения
-            container.addEventListener('click', (e) => {
-                if (e.target.closest('.slider-handle')) return; // Игнорируем сам ползунок
-                moveSlider(e.clientX);
-            });
+            if (handle) {
+                handle.addEventListener('mousedown', startDrag);
+                handle.addEventListener('touchstart', startDrag, {passive: false});
+            }
         }
 
         // --- 4. ПЕРЕВОРOT ПИСЕМ ПОЛЕВОЙ ПОЧТЫ ---
         function flipMail(element) {
             element.classList.toggle('flipped');
         }
-
 
         // --- 5. ПОЛНОЭКРАННЫЙ САЛЮТ (CANVAS) ---
         const canvasContainer = document.getElementById('canvas-container');
@@ -1734,7 +1674,6 @@
             return Math.random() * (max - min) + min;
         }
 
-        // Класс для Искр взрыва
         class Particle {
             constructor(x, y, color) {
                 this.x = x;
@@ -1772,7 +1711,6 @@
             }
         }
 
-        // Класс для Ракеты Салюта
         class Firework {
             constructor() {
                 this.x = randomRange(100, canvas.width - 100);
@@ -1782,7 +1720,6 @@
                 this.angle = randomRange(Math.PI * 1.46, Math.PI * 1.54);
                 this.vx = Math.cos(this.angle) * this.speed;
                 this.vy = Math.sin(this.angle) * this.speed;
-                // Красивые праздничные цвета для салюта
                 const colors = ['#FF4C4C', '#FFD700', '#4CAF50', '#2196F3', '#FF4081', '#00FFFF', '#E040FB', '#FF9800'];
                 this.color = colors[Math.floor(Math.random() * colors.length)];
                 this.trail = [];
@@ -1796,7 +1733,7 @@
                 }
                 this.x += this.vx;
                 this.y += this.vy;
-                this.vy += 0.04; // Сила гравитации на подлёте
+                this.vy += 0.04;
             }
 
             draw() {
@@ -1814,15 +1751,13 @@
             }
         }
 
-        // Цикл отрисовки анимации
         function animateLoop() {
             if (!isCelebrating) return;
             animationId = requestAnimationFrame(animateLoop);
 
-            ctx.fillStyle = 'rgba(10, 22, 14, 0.22)'; // Оставляем темный зеленый шлейф взрывов
+            ctx.fillStyle = 'rgba(10, 22, 14, 0.22)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Автопуски случайных ракет салюта
             if (Math.random() < 0.045) {
                 fireworks.push(new Firework());
             }
@@ -1856,14 +1791,12 @@
             }
         }
 
-        // Запуск фейерверка по клику в любую часть экрана
         canvas.addEventListener('click', (e) => {
             const colors = ['#FF4C4C', '#FFD700', '#4CAF50', '#2196F3', '#FF4081', '#00FFFF', '#E040FB', '#FF9800'];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             explode(e.clientX, e.clientY, randomColor);
         });
 
-        // Тач-событие для смартфонов
         canvas.addEventListener('touchstart', (e) => {
             const touch = e.touches[0];
             const colors = ['#FF4C4C', '#FFD700', '#4CAF50', '#2196F3', '#FF4081', '#00FFFF', '#E040FB', '#FF9800'];
@@ -1871,13 +1804,12 @@
             explode(touch.clientX, touch.clientY, randomColor);
         });
 
-        // АКТИВАЦИЯ КНОПКИ ЗАПУСКА
         startBtn.addEventListener('click', () => {
             isCelebrating = true;
             resizeCanvas();
             
             canvasContainer.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Отключаем прокрутку страницы
+            document.body.style.overflow = 'hidden';
             
             setTimeout(() => {
                 canvasContainer.style.opacity = '1';
@@ -1888,7 +1820,6 @@
                 celebrationAudio.play().catch(e => console.log("Музыка включится после тача"));
                 */
 
-                // Появление поздравительного текста с задержками
                 celebrationTitle.style.opacity = '1';
                 celebrationTitle.style.transform = 'scale(1)';
 
@@ -1898,7 +1829,6 @@
                 celebrationDesc.style.opacity = '0.7';
             }, 50);
 
-            // Начальные 4 залпа
             for(let i = 0; i < 4; i++) {
                 setTimeout(() => {
                     fireworks.push(new Firework());
@@ -1908,7 +1838,6 @@
             animateLoop();
         });
 
-        // ЗАКРЫТИЕ ПРАЗДНИЧНОГО ОКНА
         closeBtn.addEventListener('click', () => {
             isCelebrating = false;
             cancelAnimationFrame(animationId);
@@ -1930,7 +1859,7 @@
             canvasContainer.style.opacity = '0';
             setTimeout(() => {
                 canvasContainer.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Включаем прокрутку обратно
+                document.body.style.overflow = 'auto';
             }, 800);
         });
     </script>
