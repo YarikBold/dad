@@ -492,7 +492,7 @@
         }
 
 
-        /* --- НОВАЯ СЕКЦИЯ: КАРТА МАРШРУТА ВОЗВРАЩЕНИЯ --- */
+        /* --- СЕКЦИЯ: КАРТА МАРШРУТА ВОЗВРАЩЕНИЯ --- */
         .section-route-map {
             padding: 100px 20px;
             background-color: #2F3E32; /* Темно-оливковый армейский планшет */
@@ -676,227 +676,7 @@
         }
 
 
-        /* --- СЕКЦИЯ СЛАЙДЕРА "ТОГДА И СЕЙЧАС" --- */
-        .section-slider {
-            padding: 100px 20px;
-            background-color: #F1ECE3;
-            text-align: center;
-        }
-
-        .slider-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .tab-btn {
-            font-family: var(--font-main);
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 12px 30px;
-            border-radius: 30px;
-            border: 2px solid var(--color-primary);
-            background: transparent;
-            color: var(--color-primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            box-shadow: 0 5px 15px rgba(59, 83, 62, 0.2);
-        }
-
-        .slider-window {
-            position: relative;
-            max-width: 700px;
-            aspect-ratio: 4/3;
-            margin: 0 auto;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            background-color: #e6dfd5;
-        }
-
-        .slide-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.8s ease-in-out;
-        }
-
-        .slide-wrapper.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .split-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            user-select: none;
-        }
-
-        .split-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            pointer-events: none;
-        }
-
-        .split-img.img-then {
-            z-index: 1;
-        }
-
-        .split-img.img-now {
-            z-index: 2;
-            width: 50%;
-            border-right: 4px solid var(--color-accent-gold);
-        }
-
-        .slider-handle {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background-color: var(--color-accent-gold);
-            z-index: 3;
-            transform: translateX(-50%);
-            cursor: ew-resize;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-
-        .slider-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 48px;
-            height: 48px;
-            background-color: var(--color-primary);
-            border: 3px solid var(--color-accent-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .label-then, .label-now {
-            position: absolute;
-            bottom: 20px;
-            padding: 8px 16px;
-            background-color: rgba(44, 53, 48, 0.75);
-            color: var(--color-text-light);
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 4px;
-            z-index: 4;
-            letter-spacing: 1px;
-            pointer-events: none;
-        }
-
-        .label-then { left: 20px; }
-        .label-now { right: 20px; }
-
-
-        /* --- СЕКЦИЯ СЕМЕЙНОГО АРХИВА Polaroid --- */
-        .section-archive {
-            padding: 100px 20px;
-            background-color: var(--color-bg);
-            position: relative;
-        }
-
-        .archive-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
-            padding: 40px 10px;
-        }
-
-        .polaroid-card {
-            background: #ffffff;
-            padding: 16px 16px 28px 16px;
-            box-shadow: var(--shadow-polaroid);
-            border-radius: 4px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        .polaroid-card:nth-child(1) { transform: rotate(-2.5deg); }
-        .polaroid-card:nth-child(2) { transform: rotate(1.8deg); }
-        .polaroid-card:nth-child(3) { transform: rotate(-1.5deg); }
-        .polaroid-card:nth-child(4) { transform: rotate(2.8deg); }
-
-        .polaroid-wrap {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background-color: #ebe5db;
-            overflow: hidden;
-            margin-bottom: 16px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .polaroid-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: sepia(10%) contrast(95%);
-            transition: all 0.4s ease;
-        }
-
-        .polaroid-text {
-            font-family: var(--font-accent);
-            font-size: 1.05rem;
-            color: #4a413d;
-            text-align: center;
-            min-height: 28px;
-        }
-
-        .polaroid-card:hover {
-            transform: rotate(0deg) translateY(-12px) scale(1.05);
-            box-shadow: 0 20px 45px rgba(44, 53, 48, 0.2);
-            z-index: 10;
-        }
-
-        .polaroid-card:hover .polaroid-wrap img {
-            filter: sepia(0%) contrast(100%);
-        }
-
-        .polaroid-card::before {
-            content: '';
-            position: absolute;
-            top: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 24px;
-            background-color: rgba(214, 211, 193, 0.5);
-            backdrop-filter: blur(1px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-            border-radius: 2px;
-        }
-
-
-        /* --- НОВАЯ СЕКЦИЯ: ИСТОРИЯ ОДНОГО ВАЖНОГО ЗНАКОМСТВА --- */
+        /* --- СЕКЦИЯ: ИСТОРИЯ ОДНОГО ВАЖНОГО ЗНАКОМСТВА --- */
         .section-important-story {
             padding: 120px 20px;
             background-color: #F6F1E9; /* Мягкий крафтово-кремовый фон */
@@ -1037,6 +817,263 @@
         .story-polaroids-wrapper {
             display: contents; /* Позволяет десктопу позиционировать абсолютно */
         }
+
+
+        /* --- СЕКЦИЯ СЛАЙДЕРА "ТОГДА И СЕЙЧАС" --- */
+        .section-slider {
+            padding: 100px 20px;
+            background-color: #F1ECE3;
+            text-align: center;
+        }
+
+        .slider-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            box-shadow: 0 5px 15px rgba(59, 83, 62, 0.2);
+        }
+
+        .slider-window {
+            position: relative;
+            max-width: 700px;
+            aspect-ratio: 4/3;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            background-color: #e6dfd5;
+        }
+
+        .slide-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide-wrapper.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .split-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+        }
+
+        .split-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+        }
+
+        .split-img.img-then {
+            z-index: 1;
+        }
+
+        .split-img.img-now {
+            z-index: 2;
+            width: 50%;
+            border-right: 4px solid var(--color-accent-gold);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: var(--color-accent-gold);
+            z-index: 3;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background-color: var(--color-primary);
+            border: 3px solid var(--color-accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .label-then, .label-now {
+            position: absolute;
+            bottom: 20px;
+            padding: 8px 16px;
+            background-color: rgba(44, 53, 48, 0.75);
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            z-index: 4;
+            letter-spacing: 1px;
+            pointer-events: none;
+        }
+
+        .label-then { left: 20px; }
+        .label-now { right: 20px; }
+
+
+        /* --- ХАОТИЧНАЯ СЕКЦИЯ СЕМЕЙНОГО АРХИВА Polaroid (С ПЛАВНЫМИ ВОЛНАМИ) --- */
+        .section-archive {
+            padding: 100px 20px;
+            background-color: var(--color-bg);
+            position: relative;
+            min-height: 880px; /* Достаточная высота для десктопных волн */
+            overflow: hidden;
+        }
+
+        .archive-container {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            height: 680px; /* Контейнер для абсолютного позиционирования */
+        }
+
+        /* Общие правила для всех Polaroid-карточек в этой секции */
+        .arc-pol {
+            position: absolute;
+            background: #ffffff;
+            box-shadow: var(--shadow-polaroid);
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        /* 4 Основные карточки (с подписями) */
+        .arc-pol.main-card {
+            width: 210px;
+            padding: 16px 16px 28px 16px;
+        }
+
+        .arc-pol.main-card .polaroid-wrap {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #ebe5db;
+            overflow: hidden;
+            margin-bottom: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .arc-pol.main-card .polaroid-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(10%) contrast(95%);
+            transition: all 0.4s ease;
+        }
+
+        .arc-pol.main-card .polaroid-text {
+            font-family: var(--font-accent);
+            font-size: 1.05rem;
+            color: #4a413d;
+            text-align: center;
+            min-height: 28px;
+        }
+
+        .arc-pol.main-card::before {
+            content: '';
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 24px;
+            background-color: rgba(214, 211, 193, 0.5);
+            backdrop-filter: blur(1px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            border-radius: 2px;
+        }
+
+        /* 6 Дополнительных хаотичных карточек (без подписей) */
+        .arc-pol.scat-card {
+            width: 155px;
+            padding: 10px 10px 18px 10px;
+        }
+
+        .arc-pol.scat-card .sc-wrap {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #ebe5db;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .arc-pol.scat-card .sc-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(15%);
+            transition: all 0.3s ease;
+        }
+
+        /* Интерактивный ховер для всех карточек секции */
+        .arc-pol:hover {
+            transform: rotate(0deg) scale(1.18) !important;
+            box-shadow: 0 20px 45px rgba(44, 53, 48, 0.25);
+            z-index: 50;
+        }
+
+        .arc-pol:hover img {
+            filter: sepia(0%) contrast(100%) !important;
+        }
+
+        /* Уникальное волнообразное left/top позиционирование и наклоны для ПК */
+        .arc-pol-1  { left: 3%;   top: 50px;  transform: rotate(-4deg); }  /* 2004 Main */
+        .arc-pol-2  { left: 14%;  top: 360px; transform: rotate(5deg); }   /* Scat 1 */
+        .arc-pol-3  { left: 23%;  top: 80px;  transform: rotate(-3deg); }  /* Scat 2 */
+        .arc-pol-4  { left: 32%;  top: 340px; transform: rotate(4deg); }   /* 2016 Main */
+        .arc-pol-5  { left: 42%;  top: 60px;  transform: rotate(-5deg); }  /* Scat 3 */
+        .arc-pol-6  { left: 52%;  top: 360px; transform: rotate(6deg); }   /* 2018 Main */
+        .arc-pol-7  { left: 62%;  top: 70px;  transform: rotate(-4deg); }  /* Scat 4 */
+        .arc-pol-8  { left: 71%;  top: 330px; transform: rotate(5deg); }   /* Scat 5 */
+        .arc-pol-9  { left: 80%;  top: 50px;  transform: rotate(-6deg); }  /* 2022-2023 Main */
+        .arc-pol-10 { left: 89%;  top: 350px; transform: rotate(3deg); }   /* Scat 6 */
 
 
         /* --- СЕКЦИЯ ПОЛЕВОЙ ПОЧТЫ (КОНВЕРТЫ) - УЛУЧШЕННЫЙ МОБИЛЬНЫЙ ФЛИП-ЭФФЕКТ --- */
@@ -1479,10 +1516,10 @@
                 padding: 20px;
             }
             .story-book::after {
-                display: none; /* Убираем нить сгиба на мобилках для чистоты */
+                display: none; /* Убираем нить сгиба на мобилках */
             }
 
-            /* Превращаем разбросанные карточки в красивую карусель под текстом */
+            /* Превращаем 10 разбросанных карточек в красивую карусель под текстом */
             .story-polaroids-wrapper {
                 display: flex;
                 flex-direction: row;
@@ -1507,6 +1544,27 @@
             }
             .story-polaroid .sticker {
                 top: -8px;
+            }
+
+            /* СЕМЕЙНЫЙ АРХИВ НА МОБИЛЬНЫХ: Адаптивная и безопасная сетка вместо разброса */
+            .section-archive {
+                min-height: auto;
+                padding: 60px 15px;
+            }
+            .archive-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 20px;
+                height: auto;
+            }
+            .arc-pol {
+                position: static !important;
+                transform: none !important;
+                width: 100% !important;
+                margin: 0 auto;
+            }
+            .arc-pol:hover {
+                transform: none !important;
             }
         }
     </style>
@@ -1604,7 +1662,7 @@
                     <span class="timeline-date">Январь</span>
                     <p class="timeline-text">Мы встретили Новый год и загадали наше самое заветное желание — чтобы ты поскорее вернулся живым и здоровым. За праздничным столом все тосты были только о тебе!</p>
                     <div class="timeline-img-placeholder">
-                        <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=600&auto=format&fit=crop" alt="Новый Год">
+                        <img src="https://media.istockphoto.com/id/2177945223/ru/фото/портрет-украшенного-рождественского-новогоднего-обеденного-стола-при-свечах-еда-домашняя.jpg?s=170667a&w=0&k=20&c=c4Byj5VervMVKD3JNA9KWj7F05I8MsTGyt8jGkdlIig=" alt="Новый Год">
                     </div>
                 </div>
             </div>
@@ -1614,33 +1672,33 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <span class="timeline-date">Март</span>
-                    <p class="timeline-text">Мама испекла твой любимый яблочный пирог. Мы пили чай, вспоминали твои забавные армейские истории, твои шутки и то, как ты всегда умеешь поднять нам всем настроение.</p>
+                    <p class="timeline-text">Мы пили чай, вспоминали твои забавные армейские истории, твои шутки и то, как ты всегда умеешь поднять нам всем настроение.</p>
                     <div class="timeline-img-placeholder">
                         <img src="https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=600&auto=format&fit=crop" alt="Семейный пирог">
                     </div>
                 </div>
             </div>
 
-            <!-- СОБЫТИЕ 3: Май -->
+            <!-- СОБЫТИЕ 3: Май (ОБНОВЛЕННЫЙ ТЕКСТ) -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <span class="timeline-date">Май</span>
-                    <p class="timeline-text">Мы посадили молодую яблоньку в нашем саду. Назвали её в честь этого года. Она отлично прижилась и совсем недавно дала свои самые первые весенние зелёные листочки!</p>
+                    <p class="timeline-text">9 Мая вся наша дружная семья праздновала великий День Победы. Мы невероятно много думали о тебе, папа, жутко гордились тем, что у нас растет и служит свой собственный главный семейный защитник, и всем сердцем вели отсчет дней до твоего возвращения.</p>
                     <div class="timeline-img-placeholder">
-                        <img src="https://images.unsplash.com/photo-1460533076114-0a4a72852794?q=80&w=600&auto=format&fit=crop" alt="Яблоня в саду">
+                        <img src="https://avatars.mds.yandex.net/i?id=cc5f782c529c484494539322ca3dca47b18bc8ec-12642102-images-thumbs&n=13" alt="Весна">
                     </div>
                 </div>
             </div>
 
-            <!-- СОБЫТИЕ 4: Июнь -->
+            <!-- СОБЫТИЕ 4: Июнь (ДОБАВЛЕНО ФОТО) -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <span class="timeline-date">Июнь</span>
                     <p class="timeline-text">Начало лета! Мы начали вовсю готовиться к твоему приезду: перебирали вещи, строили планы на совместные поездки на рыбалку и просто не могли усидеть на месте от счастья.</p>
                     <div class="timeline-img-placeholder">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Лето">
+                        <img src="https://avatars.mds.yandex.net/i?id=d509f58a3aa5c65be5165cec4998a8bc73300fe8-12729349-images-thumbs&n=13" alt="Лето">
                     </div>
                 </div>
             </div>
@@ -1650,7 +1708,7 @@
 
 
     <!-- ========================================================== -->
-    <!-- НОВАЯ СЕКЦИЯ: КАРТА МАРШРУТА ВОЗВРАЩЕНИЯ (ТАКТИЧЕСКИЙ ПЛАНШЕТ) -->
+    <!-- СЕКЦИЯ: КАРТА МАРШРУТА ВОЗВРАЩЕНИЯ (ТАКТИЧЕСКИЙ ПЛАНШЕТ) -->
     <!-- ========================================================== -->
     <section class="section-route-map" id="routemap">
         <h2 class="section-title">Карта маршрута возвращения</h2>
@@ -1696,6 +1754,115 @@
                     Долг Родине отдан сполна. Год службы позади, приказ подписан, вещи собраны. Время возвращаться туда, где тебя безумно любят и ждут.
                 </p>
             </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================================== -->
+    <!-- СЕКЦИЯ: ИСТОРИЯ ОДНОГО ВАЖНОГО ЗНАКОМСТВА (10 ПОЛАРОИДОВ) -->
+    <!-- ========================================================== -->
+    <section class="section-important-story">
+        <div class="story-wrapper">
+            
+            <!-- Обертка для карточек (для мобильной карусели) -->
+            <div class="story-polaroids-wrapper">
+                <!-- Карточка 1 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-1">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/s2sdvPVP/photo-1.jpg" alt="Наше фото 1">
+                    </div>
+                </div>
+
+                <!-- Карточка 2 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-2">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/NMCWJWR6/photo-2.jpg" alt="Наше фото 2">
+                    </div>
+                </div>
+
+                <!-- Карточка 3 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-3">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/WzDxQXnZ/photo-3.jpg" alt="Наше фото 3">
+                    </div>
+                </div>
+
+                <!-- Карточка 4 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-4">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/XNhRw6jY/photo-4.jpg" alt="Наше фото 4">
+                    </div>
+                </div>
+
+                <!-- Карточка 5 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-5">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/QdZvygKR/photo-5.jpg" alt="Наше фото 5">
+                    </div>
+                </div>
+
+                <!-- Карточка 6 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-6">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/Mp0g2cy7/photo-6.jpg" alt="Наше фото 6">
+                    </div>
+                </div>
+
+                <!-- Карточка 7 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-7">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/GpcVccQ5/photo-7.jpg" alt="Наше фото 7">
+                    </div>
+                </div>
+
+                <!-- Карточка 8 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-8">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/3wn6NPfm/photo-8.jpg" alt="Наше фото 8">
+                    </div>
+                </div>
+
+                <!-- Карточка 9 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-9">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/ydxGZv2t/photo-9.jpg" alt="Наше фото 9">
+                    </div>
+                </div>
+
+                <!-- Карточка 10 [Постоянная прямая ссылка] -->
+                <div class="story-polaroid pol-10">
+                    <div class="sticker"></div>
+                    <div class="pol-wrap">
+                        <img src="https://i.postimg.cc/D0bYCmvh/photo-10.jpg" alt="Наше фото 10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Центральный текстовый блок («Книга») -->
+            <div class="story-book">
+                <h2 class="story-book-title">Пока тебя не было: Главная история этого года</h2>
+                <div class="story-book-content">
+                    <p>До нашей встречи моя жизнь напоминала заевшую пластинку: дом, колледж, тренировки, уроки и сон. Я умел искренне отдавать свои чувства, но в ответ раз за разом получал лишь звенящую пустоту и разочарования. В моей жизни зияла огромная дыра, которую не могли заполнить ни спорт, ни учеба — мне не хватало душевной теплоты и ощущения, что я кому-то по-настоящему нужен. Мы с ней учились в одной школе со второго класса, постоянно сталкивались в коридорах, но вместо общего языка находили лишь взаимные колкости, поддразнивания и поверхностное недопонимание. Мы были как два корабля, проходящих мимо друг друга в ночи.</p>
+                    
+                    <p>Но роковой момент был назначен свыше: 2 апреля, час ночи и восемь минут. Она написала мне в Телеграме, ошарашенная школьными новостями. Её первая фраза: "Ало, Ярослав, это правда?" — перевернула всё. Мы проговорили в ту ночь до пяти часов утра. Наши голоса хрипели, но мы не могли остановиться, рассказывая друг другу всё: от детских страхов до заветных грёз. В этом ночном разговоре я впервые почувствовал, что меня наконец-то слышат. Её зелёные глаза, природная красота и утончённый аромат духов сразу запали мне в душу. Наступил своего рода гиперфокус — мы начали переписываться 24/7, и я больше не представлял своего дня без её "доброго утра" и "спокойной ночи".</p>
+                    
+                    <p>Наше первое официальное свидание случилось 27 апреля. Это был холодный весенний день. Мы пошли в Быханов сад и прошли долгий путь от Малибу до Звёздного. Я жутко волновался, без умолку тараторил разные истории, боясь сказать глупость, а она шла рядом, чуть стеснялась и опускала взгляд. Чтобы погулять, она в шутку обманула маму, сказав, что ушла с подругой. А когда правда раскрылась, её мама в сердцах обронила фразу про шоу "Беременна в 16" — теперь это наша главная семейная шутка. Чуть позже, 9 июня, сразу после ОГЭ по русскому языку, я провожал её домой. Мы остановились, обнялись, и вдруг произошёл наш первый, неожиданный поцелуй. Сердце забилось где-то в горле, а я летел домой вприпрыжку, не чувствуя асфальта под ногами.</p>
+                    
+                    <p>Пройдя через долгие 7 месяцев негласной поддержки, ожидания и шутливых прозвищ "женишок и женушка", мы официально стали парой. Нашим определяющим моментом стали совместные приключения. Первая большая поездка в Воронеж, где мы катались на безумных каруселях, кричали от восторга, а вечером уставшие ели горячие хинкали, над которыми она заливисто смеялась. Были и волнительные этапы — например, её знакомство с моей семьёй, когда она жутко боялась мою маму.</p>
+                    
+                    <p>Теперь наш идеальный вечер дома выглядит просто и волшебно. Всё начинается с мема в Телеграме: "План на вечер утвержден". Мы устраиваемся под пледом, который вечно с нас сползает, заказываем большой сет роллов и включаем то самое шоу "Беременна в 16" — не ради драмы, а чтобы вместе комментировать, спорить и смеяться. В этой простоте, в отсутствии спешки и чувстве её руки в моей руке и заключается наше настоящее счастье. За этот год я открыл для себя целый космос и понял главное: за её иронией и сложным характером прячется невероятная, хрупкая нежность, которую я буду бережно хранить всегда.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1754,153 +1921,87 @@
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- ГАЛЕРЕЯ «СЕМЕЙНЫЙ АРХИВ» В СТИЛЕ POLAROID -->
-    <!-- ========================================== -->
+    <!-- ========================================================== -->
+    <!-- ХАОТИЧНАЯ ГАЛЕРЕЯ «СЕМЕЙНЫЙ АРХИВ» В СТИЛЕ POLAROID         -->
+    <!-- ========================================================== -->
     <section class="section-archive">
         <h2 class="section-title">Года идут, а ты всё так же наш супергерой</h2>
-        <p class="section-subtitle">Наведи на снимки, чтобы выровнять их и рассмотреть поближе</p>
+        <p class="section-subtitle">Исследуй архивные снимки: наведи курсор на фото, чтобы рассмотреть его поближе</p>
 
         <div class="archive-container">
-            <!-- КАРТОЧКА 1: 2004 год -->
-            <div class="polaroid-card">
+            <!-- КАРТОЧКА 1: 2004 год (Основная) -->
+            <div class="arc-pol main-card arc-pol-1">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/V6FTqB2Q/2004.jpg" alt="Папина молодость">
                 </div>
                 <div class="polaroid-text">2004. Папина молодость</div>
             </div>
 
-            <!-- КАРТОЧКА 2: 2016 год -->
-            <div class="polaroid-card">
+            <!-- КАРТОЧКА 2: Дополнительное фото 1 -->
+            <div class="arc-pol scat-card arc-pol-2">
+                <div class="sc-wrap">
+                    <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2NotsbHsqi1JOjmPV8myHI_TE_PY-DhCB_be2SzzZSQYKmk" alt="Дополнительный кадр">
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА 3: Дополнительное фото 2 -->
+            <div class="arc-pol scat-card arc-pol-3">
+                <div class="sc-wrap">
+                    <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2Noturn2-Gxs5bAkGL4Lvd4lfvPY-DhCB_be2SzzZSQYKmk" alt="Дополнительный кадр">
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА 4: 2016 год (Основная) -->
+            <div class="arc-pol main-card arc-pol-4">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/1t46Byjy/DSC04278.jpg" alt="Брату год">
                 </div>
                 <div class="polaroid-text">2016. Брату ровно год, банда растет</div>
             </div>
 
-            <!-- КАРТОЧКА 3: 2018 год -->
-            <div class="polaroid-card">
+            <!-- КАРТОЧКА 5: Дополнительное фото 3 -->
+            <div class="arc-pol scat-card arc-pol-5">
+                <div class="sc-wrap">
+                    <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2NotYtAW-OMn9AlKFmi-JK9EKPPY-DhCB_be2SzzZSQYKmk" alt="Дополнительный кадр">
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА 6: 2018 год (Основная) -->
+            <div class="arc-pol main-card arc-pol-6">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/qRmwBm9B/2018.jpg" alt="Счастливые моменты">
                 </div>
                 <div class="polaroid-text">2018. Счастливые моменты вместе</div>
             </div>
 
-            <!-- КАРТОЧКА 4: 2022-2023 года -->
-            <div class="polaroid-card">
+            <!-- КАРТОЧКА 7: Дополнительное фото 4 -->
+            <div class="arc-pol scat-card arc-pol-7">
+                <div class="sc-wrap">
+                    <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2NotihgIB9IJkLHgIVpry66XqPPY-DhCB_be2SzzZSQYKmk" alt="Дополнительный кадр">
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА 8: Дополнительное фото 5 -->
+            <div class="arc-pol scat-card arc-pol-8">
+                <div class="sc-wrap">
+                    <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2Not-XnGZv16ov732h1oH1uGMfPY-DhCB_be2SzzZSQYKmk" alt="Дополнительный кадр">
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА 9: 2022-2023 года (Основная) -->
+            <div class="arc-pol main-card arc-pol-9">
                 <div class="polaroid-wrap">
                     <img src="https://i.postimg.cc/bwXTvSFH/2023.jpg" alt="Мы выросли">
                 </div>
                 <div class="polaroid-text">2022-2023. Мы выросли и очень тобой гордимся</div>
             </div>
-        </div>
-    </section>
 
-    <!-- ========================================================== -->
-    <!-- СЕКЦИЯ: ИСТОРИЯ ОДНОГО ВАЖНОГО ЗНАКОМСТВА (10 ПОЛАРОИДОВ) -->
-    <!-- ========================================================== -->
-    <section class="section-important-story">
-        <div class="story-wrapper">
-            
-            <!-- Обертка для карточек (для мобильной карусели) -->
-            <div class="story-polaroids-wrapper">
-                <!-- Карточка 1 -->
-                <div class="story-polaroid pol-1">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/s2sdvPVP/photo-1.jpg" alt="Наше фото 1">
-                    </div>
-                </div>
-
-                <!-- Карточка 2 -->
-                <div class="story-polaroid pol-2">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/NMCWJWR6/photo-2.jpg" alt="Наше фото 2">
-                    </div>
-                </div>
-
-                <!-- Карточка 3 -->
-                <div class="story-polaroid pol-3">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/WzDxQXnZ/photo-3.jpg" alt="Наше фото 3">
-                    </div>
-                </div>
-
-                <!-- Карточка 4 -->
-                <div class="story-polaroid pol-4">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/XNhRw6jY/photo-4.jpg" alt="Наше фото 4">
-                    </div>
-                </div>
-
-                <!-- Карточка 5 -->
-                <div class="story-polaroid pol-5">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/QdZvygKR/photo-5.jpg" alt="Наше фото 5">
-                    </div>
-                </div>
-
-                <!-- Карточка 6 -->
-                <div class="story-polaroid pol-6">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/Mp0g2cy7/photo-6.jpg" alt="Наше фото 6">
-                    </div>
-                </div>
-
-                <!-- Карточка 7 -->
-                <div class="story-polaroid pol-7">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/GpcVccQ5/photo-7.jpg" alt="Наше фото 7">
-                    </div>
-                </div>
-
-                <!-- Карточка 8 -->
-                <div class="story-polaroid pol-8">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/3wn6NPfm/photo-8.jpg" alt="Наше фото 8">
-                    </div>
-                </div>
-
-                <!-- Карточка 9 -->
-                <div class="story-polaroid pol-9">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/ydxGZv2t/photo-9.jpg" alt="Наше фото 9">
-                    </div>
-                </div>
-
-                <!-- Карточка 10 -->
-                <div class="story-polaroid pol-10">
-                    <div class="sticker"></div>
-                    <div class="pol-wrap">
-                        <img src="https://i.postimg.cc/D0bYCmvh/photo-10.jpg" alt="Наше фото 10">
-                    </div>
+            <!-- КАРТОЧКА 10: Дополнительное фото 6 -->
+            <div class="arc-pol scat-card arc-pol-10">
+                <div class="sc-wrap">
+                    <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2Not-2rE3mVTPPcPPKk-6AxJMPPY-DhCB_be2SzzZSQYKmk" alt="Дополнительный кадр">
                 </div>
             </div>
-
-            <!-- Центральный текстовый блок («Книга») -->
-            <div class="story-book">
-                <h2 class="story-book-title">Пока тебя не было: Главная история этого года</h2>
-                <div class="story-book-content">
-                    <p>До нашей встречи моя жизнь напоминала заевшую пластинку: дом, колледж, тренировки, уроки и сон. Я умел искренне отдавать свои чувства, но в ответ раз за разом получал лишь звенящую пустоту и разочарования. В моей жизни зияла огромная дыра, которую не могли заполнить ни спорт, ни учеба — мне не хватало душевной теплоты и ощущения, что я кому-то по-настоящему нужен. Мы с ней учились в одной школе со второго класса, постоянно сталкивались в коридорах, но вместо общего языка находили лишь взаимные колкости, поддразнивания и поверхностное недопонимание. Мы были как два корабля, проходящих мимо друг друга в ночи.</p>
-                    
-                    <p>Но роковой момент был назначен свыше: 2 апреля, час ночи и восемь минут. Она написала мне в Телеграме, ошарашенная школьными новостями. Её первая фраза: "Ало, Ярослав, это правда?" — перевернула всё. Мы проговорили в ту ночь до пяти часов утра. Наши голоса хрипели, но мы не могли остановиться, рассказывая друг другу всё: от детских страхов до заветных грёз. В этом ночном разговоре я впервые почувствовал, что меня наконец-то слышат. Её зелёные глаза, природная красота и утончённый аромат духов сразу запали мне в душу. Наступил своего рода гиперфокус — мы начали переписываться 24/7, и я больше не представлял своего дня без её "доброго утра" и "спокойной ночи".</p>
-                    
-                    <p>Наше первое официальное свидание случилось 27 апреля. Это был холодный весенний день. Мы пошли в Быханов сад и прошли долгий путь от Малибу до Звёздного. Я жутко волновался, без умолку тараторил разные истории, боясь сказать глупость, а она шла рядом, чуть стеснялась и опускала взгляд. Чтобы погулять, она в шутку обманула маму, сказав, что ушла с подругой. А когда правда раскрылась, её мама в сердцах обронила фразу про шоу "Беременна в 16" — теперь это наша главная семейная шутка. Чуть позже, 9 июня, сразу после ОГЭ по русскому языку, я провожал её домой. Мы остановились, обнялись, и вдруг произошёл наш первый, неожиданный поцелуй. Сердце забилось где-то в горле, а я летел домой вприпрыжку, не чувствуя асфальта под ногами.</p>
-                    
-                    <p>Пройдя через долгие 7 месяцев негласной поддержки, ожидания и шутливых прозвищ "женишок и женушка", мы официально стали парой. Нашим определяющим моментом стали совместные приключения. Первая большая поездка в Воронеж, где мы катались на безумных каруселях, кричали от восторга, а вечером уставшие ели горячие хинкали, над которыми она заливисто смеялась. Были и волнительные этапы — например, её знакомство с моей семьёй, когда она жутко боялась мою маму.</p>
-                    
-                    <p>Теперь наш идеальный вечер дома выглядит просто и волшебно. Всё начинается с мема в Телеграме: "План на вечер утвержден". Мы устраиваемся под пледом, который вечно с нас сползает, заказываем большой сет роллов и включаем то самое шоу "Беременна в 16" — не ради драмы, а чтобы вместе комментировать, спорить и смеяться. В этой простоте, в отсутствии спешки и чувстве её руки в моей руке и заключается наше настоящее счастье. За этот год я открыл для себя целый космос и понял главное: за её иронией и сложным характером прячется невероятная, хрупкая нежность, которую я буду бережно хранить всегда.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -1925,7 +2026,7 @@
                     </div>
                     <div class="mail-back">
                         <p class="letter-content">"Дорогой мой! Каждый день без тебя тянулся бесконечно. Но наша любовь и вера согревали меня. Я невероятно счастлива знать, что ты наконец-то дома, в безопасности, на своём любимом месте. Добро пожаловать домой, родной!"</p>
-                        <h4 class="letter-author">Твой любящая жена ❤️</h4>
+                        <h4 class="letter-author">Твоя любящая жена ❤️</h4>
                     </div>
                 </div>
             </div>
@@ -2028,29 +2129,24 @@
 
         // Логика переключения рапортов карты
         function activateMapStep(stepNumber, element) {
-            // Снятие активного класса со всех точек
             const nodes = document.querySelectorAll('.map-step-node');
             nodes.forEach(node => node.classList.remove('active'));
             
-            // Активация текущей точки
             element.classList.add('active');
 
             const statusEl = document.getElementById('reportStatus');
             const locationEl = document.getElementById('reportLocation');
             const textEl = document.getElementById('reportText');
 
-            // Эффект плавного затухания перед сменой текста
             textEl.classList.remove('show');
             statusEl.style.opacity = '0';
             locationEl.style.opacity = '0';
 
             setTimeout(() => {
-                // Подгружаем новые данные
                 statusEl.textContent = mapData[stepNumber].status;
                 locationEl.textContent = mapData[stepNumber].location;
                 textEl.textContent = mapData[stepNumber].text;
 
-                // Плавно проявляем обратно
                 textEl.classList.add('show');
                 statusEl.style.opacity = '1';
                 locationEl.style.opacity = '1';
