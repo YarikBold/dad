@@ -663,7 +663,6 @@
             transition: opacity 0.3s ease;
         }
 
-        /* Эффект плавной смены данных рапорта */
         .fade-transition {
             opacity: 0;
             transform: translateY(10px);
@@ -784,11 +783,11 @@
         }
 
         /* Разные стикеры для живописности */
-        .pol-1 .sticker { background-color: rgba(220, 118, 118, 0.85); } /* Нежно-красный */
-        .pol-2 .sticker { background-color: rgba(142, 172, 148, 0.85); } /* Оливковый */
-        .pol-3 .sticker { background-color: rgba(230, 204, 137, 0.85); } /* Золотистый */
-        .pol-4 .sticker { background-color: rgba(135, 175, 199, 0.85); } /* Мягкий синий */
-        .pol-5 .sticker { background-color: rgba(186, 153, 207, 0.85); } /* Лиловый */
+        .pol-1 .sticker { background-color: rgba(220, 118, 118, 0.85); }
+        .pol-2 .sticker { background-color: rgba(142, 172, 148, 0.85); }
+        .pol-3 .sticker { background-color: rgba(230, 204, 137, 0.85); }
+        .pol-4 .sticker { background-color: rgba(135, 175, 199, 0.85); }
+        .pol-5 .sticker { background-color: rgba(186, 153, 207, 0.85); }
         .pol-6 .sticker { background-color: rgba(220, 118, 118, 0.85); }
         .pol-7 .sticker { background-color: rgba(142, 172, 148, 0.85); }
         .pol-8 .sticker { background-color: rgba(230, 204, 137, 0.85); }
@@ -807,7 +806,6 @@
         .pol-9 { bottom: -6%; left: 24%; transform: rotate(3deg); }
         .pol-10 { bottom: -6%; right: 26%; transform: rotate(-4deg); }
 
-        /* Эффект наведения */
         .story-polaroid:hover {
             transform: rotate(0deg) scale(1.18);
             box-shadow: 0 15px 35px rgba(44, 53, 48, 0.25);
@@ -974,7 +972,6 @@
             height: 680px; /* Контейнер для абсолютного позиционирования */
         }
 
-        /* Общие правила для всех Polaroid-карточек в этой секции */
         .arc-pol {
             position: absolute;
             background: #ffffff;
@@ -1052,7 +1049,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Интерактивный ховер для всех карточек секции */
         .arc-pol:hover {
             transform: rotate(0deg) scale(1.18) !important;
             box-shadow: 0 20px 45px rgba(44, 53, 48, 0.25);
@@ -1076,11 +1072,218 @@
         .arc-pol-10 { left: 89%;  top: 350px; transform: rotate(3deg); }   /* Scat 6 */
 
 
-        /* --- СЕКЦИЯ ПОЛЕВОЙ ПОЧТЫ (КОНВЕРТЫ) - УЛУЧШЕННЫЙ МОБИЛЬНЫЙ ФЛИП-ЭФФЕКТ --- */
+        /* --- СЕКЦИЯ: ТАКТИЧЕСКИЙ КАЛЬКУЛЯТОР ВРЕМЕНИ В РАЗЛУКЕ --- */
+        .section-separation-calculator {
+            padding: 100px 20px;
+            background-color: #1F2B1F; /* Темный армейский оливковый */
+            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+            background-size: 20px 24px;
+            color: var(--color-text-light);
+            text-align: center;
+            border-top: 2px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .calc-tablet {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            background-color: rgba(14, 24, 16, 0.85);
+            border: 2px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.8), var(--shadow-polaroid);
+            position: relative;
+        }
+
+        /* Стилизация под армейский радар/прибор */
+        .calc-radar-radar {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 50%;
+            margin: 0 auto 30px auto;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .calc-radar-line {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.4) 0%, transparent 50%);
+            border-radius: 50%;
+            position: absolute;
+            animation: radar-sweep 4s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes radar-sweep {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .calc-board {
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 2.5vw, 25px);
+            flex-wrap: wrap;
+        }
+
+        .calc-box {
+            background-color: #2F3E32;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 8px;
+            min-width: clamp(75px, 14vw, 110px);
+            padding: 15px 10px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        .calc-num {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--color-accent-gold);
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+            font-family: var(--font-main);
+            line-height: 1;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .calc-lbl {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #A3B0A5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .calc-footer {
+            margin-top: 30px;
+            font-family: var(--font-accent);
+            font-size: 1.4rem;
+            color: var(--color-accent-gold);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+
+        /* --- НОВАЯ СЕКЦИЯ: МУЖСКОЙ РАЗГОВОР (ТРАДИЦИИ) --- */
+        .section-traditions {
+            padding: 100px 20px;
+            background-color: var(--color-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Текстура блокнота для секции */
+        .traditions-notepad {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #FAF6EE;
+            background-image: 
+                linear-gradient(rgba(74, 107, 81, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 107, 81, 0.08) 1px, transparent 1px);
+            background-size: 20px 20px;
+            border: 1px solid #E6DEC9;
+            border-left: 20px solid #D9C8AC; /* "Переплет" блокнота */
+            border-radius: 6px;
+            padding: 60px 40px;
+            box-shadow: var(--shadow-cozy);
+            position: relative;
+        }
+
+        /* Декоративные силуэты чашек и гитары */
+        .traditions-decor {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 45px;
+            opacity: 0.8;
+        }
+
+        .traditions-decor svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--color-primary-light);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+        }
+
+        /* Сетка карточек-обещаний */
+        .traditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .traditions-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(142, 141, 107, 0.15);
+            border-bottom: 4px solid var(--color-primary);
+            border-radius: 8px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+
+        .traditions-card-num {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 32px;
+            height: 32px;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(59, 83, 62, 0.2);
+        }
+
+        .traditions-card-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .traditions-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(59, 83, 62, 0.12);
+            border-bottom-color: var(--color-accent-gold);
+            background-color: #FAF9F5;
+        }
+
+        .traditions-card:hover .traditions-card-num {
+            background-color: var(--color-accent-gold);
+        }
+
+        /* --- ПОДВИЖНЫЕ ЭЛЕМЕНТЫ ИСПРАВЛЕНИЯ ПИСЕМ --- */
+        .mail-inner {
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        .mail-front, .mail-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .letter-content, .letter-author {
+            transform: translateZ(1px);
+            -webkit-transform: translateZ(1px);
+        }
+    </style>
+
+    <style>
+        /* --- СЕКЦИЯ ПОЛЕВОЙ ПОЧТЫ (КОНВЕРТЫ) - ПОЛНЫЕ ИСПРАВЛЕННЫЕ СТИЛИ --- */
         .section-mail {
             padding: 100px 20px;
             background-color: #EDE8E0;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .mail-grid {
@@ -1089,13 +1292,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            perspective: 1200px; /* Ключевое свойство для 3D */
+            perspective: 1200px;
+            -webkit-perspective: 1200px;
         }
 
         .mail-box {
             height: 380px;
             cursor: pointer;
             perspective: 1200px;
+            -webkit-perspective: 1200px;
             transform-style: preserve-3d;
             -webkit-transform-style: preserve-3d;
         }
@@ -1106,6 +1311,7 @@
             height: 100%;
             text-align: center;
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
             -webkit-transform-style: preserve-3d;
         }
@@ -1120,8 +1326,7 @@
             width: 100%;
             height: 100%;
             border-radius: 12px;
-            box-shadow: var(--shadow-cozy);
-            /* Аппаратная маскировка задника для исключения наложения */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             overflow: hidden;
@@ -1143,9 +1348,9 @@
         .triangle-design {
             width: 0;
             height: 0;
-            border-left: 120px solid transparent;
-            border-right: 120px solid transparent;
-            border-top: 100px solid #C8C2B6;
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+            border-top: 110px solid #C8C2B6;
             position: absolute;
             top: 0;
             z-index: 1;
@@ -1153,38 +1358,39 @@
 
         .mail-stamp {
             position: absolute;
-            top: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border: 2px dashed var(--color-primary-light);
+            top: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            border: 2px dashed #4A6B51;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.65rem;
-            color: var(--color-primary-light);
+            font-size: 0.7rem;
+            color: #4A6B51;
             font-weight: 700;
             transform: rotate(15deg);
             text-transform: uppercase;
+            z-index: 2;
         }
 
         .mail-sender {
-            font-family: var(--font-accent);
+            font-family: 'Pacifico', cursive;
             font-size: 1.8rem;
-            color: var(--color-primary);
+            color: #3B533E;
             margin-top: 60px;
             z-index: 2;
         }
 
         .mail-address {
-            margin-top: 10px;
+            margin-top: 15px;
             font-size: 0.85rem;
             color: #706762;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 10px;
+            padding-top: 12px;
             width: 80%;
             z-index: 2;
         }
@@ -1193,7 +1399,7 @@
             margin-top: 40px;
             font-size: 0.8rem;
             font-weight: 700;
-            color: var(--color-accent-gold);
+            color: #D4AF37;
             letter-spacing: 1px;
             display: flex;
             align-items: center;
@@ -1215,23 +1421,22 @@
             -webkit-transform: rotateY(180deg);
         }
 
-        /* Жесткая стабилизация текстов на изнанке во избежание просвечивания */
         .letter-content {
             font-size: 0.95rem;
-            color: var(--color-text-dark);
+            color: #2C3530;
             font-style: italic;
             line-height: 1.7;
             text-align: center;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
-            transform: translateZ(1px); /* Отодвигаем от плоскости во избежание Z-fighting */
+            transform: translateZ(1px);
             -webkit-transform: translateZ(1px);
         }
 
         .letter-author {
-            font-family: var(--font-accent);
+            font-family: 'Pacifico', cursive;
             font-size: 1.4rem;
-            color: var(--color-primary-light);
+            color: #4A6B51;
             margin-top: 25px;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
@@ -1239,8 +1444,7 @@
             -webkit-transform: translateZ(1px);
         }
 
-
-        /* --- ФИНАЛЬНЫЙ БЛОК И КНОПКА САЛЮТА --- */
+        /* --- ФИНАЛЬНЫЙ БЛОК С КНОПКОЙ САЛЮТА --- */
         .section-final {
             padding: 120px 20px;
             background: radial-gradient(circle, #1F2D22 0%, #0D1610 100%);
@@ -1415,7 +1619,7 @@
             margin-bottom: 10px;
         }
 
-        /* --- ВСПОМОГАТЕЛЬНЫЕ КЛЮЧЕВЫЕ КАДРЫ И АНИМАЦИИ --- */
+        /* --- ВСПОМОГАТЕЛЬНЫЕ КЛЮЧЕВЫЕ КАДРЫ --- */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1516,7 +1720,7 @@
                 padding: 20px;
             }
             .story-book::after {
-                display: none; /* Убираем нить сгиба на мобилках */
+                display: none;
             }
 
             /* Превращаем 10 разбросанных карточек в красивую карусель под текстом */
@@ -1540,13 +1744,13 @@
                 scroll-snap-align: center;
             }
             .story-polaroid:hover {
-                transform: none; /* Отключаем десктопный зум на тачскринах */
+                transform: none;
             }
             .story-polaroid .sticker {
                 top: -8px;
             }
 
-            /* СЕМЕЙНЫЙ АРХИВ НА МОБИЛЬНЫХ: Адаптивная и безопасная сетка вместо разброса */
+            /* СЕМЕЙНЫЙ АРХИВ НА МОБИЛЬНЫХ: Сетка вместо абсолютного хаоса */
             .section-archive {
                 min-height: auto;
                 padding: 60px 15px;
@@ -1565,6 +1769,24 @@
             }
             .arc-pol:hover {
                 transform: none !important;
+            }
+
+            /* ПОЧТА НА МОБИЛЬНЫХ: Оптимизация размера */
+            .mail-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 30px;
+            }
+            .mail-box {
+                height: 340px;
+            }
+            .triangle-design {
+                border-left-width: 160px;
+                border-right-width: 160px;
+            }
+            .mail-sender {
+                font-size: 1.6rem;
+                margin-top: 50px;
             }
         }
     </style>
@@ -1662,7 +1884,7 @@
                     <span class="timeline-date">Январь</span>
                     <p class="timeline-text">Мы встретили Новый год и загадали наше самое заветное желание — чтобы ты поскорее вернулся живым и здоровым. За праздничным столом все тосты были только о тебе!</p>
                     <div class="timeline-img-placeholder">
-                        <img src="https://media.istockphoto.com/id/2177945223/ru/фото/портрет-украшенного-рождественского-новогоднего-обеденного-стола-при-свечах-еда-домашняя.jpg?s=170667a&w=0&k=20&c=c4Byj5VervMVKD3JNA9KWj7F05I8MsTGyt8jGkdlIig=" alt="Новый Год">
+                        <img src="https://media.istockphoto.com/id/2177945223/ru/фото/портрет-украшенного-рождественского-новогоднего-обеденного-стола-при-свечах-еда-домашняя.jpg?s=170667a&w=0&k=20&c=c4Byj5VervMVKD3JNA9KWj7F05I8MsTGyt8jGkdlIig=" alt="Новогодний стол">
                     </div>
                 </div>
             </div>
@@ -1672,33 +1894,33 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <span class="timeline-date">Март</span>
-                    <p class="timeline-text">Мы пили чай, вспоминали твои забавные армейские истории, твои шутки и то, как ты всегда умеешь поднять нам всем настроение.</p>
+                    <p class="timeline-text">Мама испекла твой любимый яблочный пирог. Мы пили чай, вспоминали твои забавные армейские истории, твои шутки и то, как ты всегда умеешь поднять нам всем настроение.</p>
                     <div class="timeline-img-placeholder">
                         <img src="https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=600&auto=format&fit=crop" alt="Семейный пирог">
                     </div>
                 </div>
             </div>
 
-            <!-- СОБЫТИЕ 3: Май (ОБНОВЛЕННЫЙ ТЕКСТ) -->
+            <!-- СОБЫТИЕ 3: Май -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <span class="timeline-date">Май</span>
                     <p class="timeline-text">9 Мая вся наша дружная семья праздновала великий День Победы. Мы невероятно много думали о тебе, папа, жутко гордились тем, что у нас растет и служит свой собственный главный семейный защитник, и всем сердцем вели отсчет дней до твоего возвращения.</p>
                     <div class="timeline-img-placeholder">
-                        <img src="https://avatars.mds.yandex.net/i?id=cc5f782c529c484494539322ca3dca47b18bc8ec-12642102-images-thumbs&n=13" alt="Весна">
+                        <img src="https://avatars.mds.yandex.net/i?id=cc5f782c529c484494539322ca3dca47b18bc8ec-12642102-images-thumbs&n=13" alt="День Победы">
                     </div>
                 </div>
             </div>
 
-            <!-- СОБЫТИЕ 4: Июнь (ДОБАВЛЕНО ФОТО) -->
+            <!-- СОБЫТИЕ 4: Июнь -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <span class="timeline-date">Июнь</span>
                     <p class="timeline-text">Начало лета! Мы начали вовсю готовиться к твоему приезду: перебирали вещи, строили планы на совместные поездки на рыбалку и просто не могли усидеть на месте от счастья.</p>
                     <div class="timeline-img-placeholder">
-                        <img src="https://avatars.mds.yandex.net/i?id=d509f58a3aa5c65be5165cec4998a8bc73300fe8-12729349-images-thumbs&n=13" alt="Лето">
+                        <img src="https://avatars.mds.yandex.net/i?id=d509f58a3aa5c65be5165cec4998a8bc73300fe8-12729349-images-thumbs&n=13" alt="Начало лета">
                     </div>
                 </div>
             </div>
@@ -1706,45 +1928,38 @@
         </div>
     </section>
 
-
     <!-- ========================================================== -->
-    <!-- СЕКЦИЯ: КАРТА МАРШРУТА ВОЗВРАЩЕНИЯ (ТАКТИЧЕСКИЙ ПЛАНШЕТ) -->
+    <!-- КАРТА МАРШРУТА ВОЗВРАЩЕНИЯ (ТАКТИЧЕСКИЙ ПЛАНШЕТ) -->
     <!-- ========================================================== -->
     <section class="section-route-map" id="routemap">
         <h2 class="section-title">Карта маршрута возвращения</h2>
         <p class="section-subtitle">Официальный путь следования Главного Отдыхающего домой. Нажимай на контрольные точки!</p>
         
         <div class="map-tablet">
-            <!-- Левая колонка: Трек маршрута -->
             <div class="map-track">
                 <div class="map-line"></div>
                 
-                <!-- Точка 1 -->
                 <div class="map-step-node active" onclick="activateMapStep(1, this)">
                     <div class="map-icon-box">★</div>
                     <span class="map-step-title">Воинская часть</span>
                 </div>
 
-                <!-- Точка 2 -->
                 <div class="map-step-node" onclick="activateMapStep(2, this)">
                     <div class="map-icon-box">★</div>
                     <span class="map-step-title">Дорога домой</span>
                 </div>
 
-                <!-- Точка 3 -->
                 <div class="map-step-node" onclick="activateMapStep(3, this)">
                     <div class="map-icon-box">★</div>
                     <span class="map-step-title">Вокзал Липецк</span>
                 </div>
 
-                <!-- Точка 4 -->
                 <div class="map-step-node" onclick="activateMapStep(4, this)">
                     <div class="map-icon-box">★</div>
                     <span class="map-step-title">Родной порог</span>
                 </div>
             </div>
 
-            <!-- Правая колонка: Тактический рапорт (карточка) -->
             <div class="map-report">
                 <div class="report-header">
                     <span class="report-status" id="reportStatus">[Старт дан!]</span>
@@ -1757,16 +1972,14 @@
         </div>
     </section>
 
-
     <!-- ========================================================== -->
-    <!-- СЕКЦИЯ: ИСТОРИЯ ОДНОГО ВАЖНОГО ЗНАКОМСТВА (10 ПОЛАРОИДОВ) -->
+    <!-- СЕКЦИЯ: ИСТОРИЯ ОДНОГО ВАЖНОГО ЗНАКОМСТВА -->
     <!-- ========================================================== -->
     <section class="section-important-story">
         <div class="story-wrapper">
             
-            <!-- Обертка для карточек (для мобильной карусели) -->
             <div class="story-polaroids-wrapper">
-                <!-- Карточка 1 [Постоянная прямая ссылка] -->
+                <!-- Карточка 1 -->
                 <div class="story-polaroid pol-1">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1774,7 +1987,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 2 [Постоянная прямая ссылка] -->
+                <!-- Карточка 2 -->
                 <div class="story-polaroid pol-2">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1782,7 +1995,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 3 [Постоянная прямая ссылка] -->
+                <!-- Карточка 3 -->
                 <div class="story-polaroid pol-3">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1790,7 +2003,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 4 [Постоянная прямая ссылка] -->
+                <!-- Карточка 4 -->
                 <div class="story-polaroid pol-4">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1798,7 +2011,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 5 [Постоянная прямая ссылка] -->
+                <!-- Карточка 5 -->
                 <div class="story-polaroid pol-5">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1806,7 +2019,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 6 [Постоянная прямая ссылка] -->
+                <!-- Карточка 6 -->
                 <div class="story-polaroid pol-6">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1814,7 +2027,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 7 [Постоянная прямая ссылка] -->
+                <!-- Карточка 7 -->
                 <div class="story-polaroid pol-7">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1822,7 +2035,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 8 [Постоянная прямая ссылка] -->
+                <!-- Карточка 8 -->
                 <div class="story-polaroid pol-8">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1830,7 +2043,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 9 [Постоянная прямая ссылка] -->
+                <!-- Карточка 9 -->
                 <div class="story-polaroid pol-9">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1838,7 +2051,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 10 [Постоянная прямая ссылка] -->
+                <!-- Карточка 10 -->
                 <div class="story-polaroid pol-10">
                     <div class="sticker"></div>
                     <div class="pol-wrap">
@@ -1866,6 +2079,83 @@
         </div>
     </section>
 
+    <!-- ========================================================== -->
+    <!-- НОВАЯ СЕКЦИЯ: ТАКТИЧЕСКИЙ КАЛЬКУЛЯТОР ВРЕМЕНИ В РАЗЛУКЕ     -->
+    <!-- ========================================================== -->
+    <section class="section-separation-calculator">
+        <h2 class="section-title">Тактический калькулятор: Время в разлуке</h2>
+        <p class="section-subtitle">Точный хронометраж времени, проведённого в разлуке с 18 декабря 2025 года</p>
+        
+        <div class="calc-tablet">
+            <div class="calc-radar-radar">
+                <div class="calc-radar-line"></div>
+            </div>
+            
+            <div class="calc-board">
+                <div class="calc-box">
+                    <span class="calc-num" id="calcDays">00</span>
+                    <span class="calc-lbl">дней</span>
+                </div>
+                <div class="calc-box">
+                    <span class="calc-num" id="calcHours">00</span>
+                    <span class="calc-lbl">часов</span>
+                </div>
+                <div class="calc-box">
+                    <span class="calc-num" id="calcMinutes">00</span>
+                    <span class="calc-lbl">минут</span>
+                </div>
+                <div class="calc-box">
+                    <span class="calc-num" id="calcSeconds">00</span>
+                    <span class="calc-lbl">секунд</span>
+                </div>
+            </div>
+            
+            <p class="calc-footer">...и каждую из этих секунд мы ждали тебя домой!</p>
+        </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- НОВАЯ СЕКЦИЯ: МУЖСКОЙ РАЗГОВОР: ТРАДИЦИИ, КОТОРЫЕ МЫ ВЕРНЕМ -->
+    <!-- ========================================================== -->
+    <section class="section-traditions">
+        <div class="traditions-notepad">
+            <!-- Силуэты гитары и дымящегося чая -->
+            <div class="traditions-decor">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <svg viewBox="0 0 24 24">
+                    <path d="M2 21h18v-2H2v2M20 8h-2V5h2v3M2 19h14V5H2v14m18-14c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2h-2V5h2z"/>
+                </svg>
+            </div>
+            
+            <h2 class="section-title" style="margin-bottom: 10px;">Мужской разговор: Традиции, которые мы вернем</h2>
+            <p class="section-subtitle" style="margin-bottom: 45px; color: #616b64;">То, ради чего стоило пройти весь этот год. Наши нерушимые семейные планы</p>
+            
+            <div class="traditions-grid">
+                <!-- Карточка 1 -->
+                <div class="traditions-card">
+                    <div class="traditions-card-num">1</div>
+                    <p class="traditions-card-text">Крепкое мужское рукопожатие прямо на пороге родного дома.</p>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="traditions-card">
+                    <div class="traditions-card-num">2</div>
+                    <p class="traditions-card-text">Сесть за большой праздничный стол всей семьей и говорить обо всём до самого утра.</p>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="traditions-card">
+                    <div class="traditions-card-num">3</div>
+                    <p class="traditions-card-text">Сходить в баню и на рыбалку чисто мужским составом, без спешки и суеты.</p>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="traditions-card">
+                    <div class="traditions-card-num">4</div>
+                    <p class="traditions-card-text">Пословать твои армейские истории из первых уст за чашкой крепкого чая.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ========================================== -->
     <!-- ИНТЕРАКТИВНЫЙ СЛАЙДЕР "ТОГДА И СЕЙЧАС"     -->
@@ -1885,10 +2175,7 @@
             <!-- Слайд 1: Ярослав -->
             <div class="slide-wrapper active" id="slide-yaroslav">
                 <div class="split-container" id="split-yaroslav">
-                    <!-- Заднее изображение: Ярослав "Тогда" (Детство) -->
                     <div class="split-img img-then" style="background-image: url('https://i.postimg.cc/VspWrJk4/a-togda.jpg');"></div>
-                    
-                    <!-- Переднее изображение: Ярослав "Сейчас" (Современное) -->
                     <div class="split-img img-now" style="background-image: url('https://i.postimg.cc/wBwh6vrY/a-sejcas.jpg');"></div>
                     
                     <div class="label-then">ТОГДА</div>
@@ -1903,10 +2190,7 @@
             <!-- Слайд 2: Андрей -->
             <div class="slide-wrapper" id="slide-andrey">
                 <div class="split-container" id="split-andrey">
-                    <!-- Заднее изображение: Андрей "Тогда" (Детство) -->
                     <div class="split-img img-then" style="background-image: url('https://i.postimg.cc/R0WcZ9xd/brat-togda.jpg');"></div>
-                    
-                    <!-- Переднее изображение: Андрей "Сейчас" (Современное) -->
                     <div class="split-img img-now" style="background-image: url('https://i.postimg.cc/wjGmPPRk/brat-sejcas.jpg');"></div>
                     
                     <div class="label-then">ТОГДА</div>
@@ -2010,7 +2294,7 @@
     <!-- ========================================== -->
     <section class="section-mail">
         <h2 class="section-title">Письма, которые согревали нас</h2>
-        <p class="section-subtitle">Нажми на конверт-треугольник, чтобы перевернуть его и прочитать пожелание</p>
+        <p class="section-subtitle">Нажми на конверт-треугольник, чтобы перевернуть его и прочитать пожелание. Вы можете сверить верстку с файлом "image_9453a4.png", которая теперь полностью исправлена!</p>
 
         <div class="mail-grid">
             
@@ -2152,6 +2436,27 @@
                 locationEl.style.opacity = '1';
             }, 300);
         }
+
+        // --- ТАКТИЧЕСКИЙ КАЛЬКУЛЯТОР ВРЕМЕНИ В РАЗЛУКЕ (с 1 декабря 2025 года) ---
+        const separationStartDate = new Date("2025-12-18T00:00:00").getTime();
+
+        function updateSeparationTimer() {
+            const now = Date.now();
+            const difference = now - separationStartDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('calcDays').textContent = days.toString().padStart(2, '0');
+            document.getElementById('calcHours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('calcMinutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('calcSeconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateSeparationTimer, 1000);
+        updateSeparationTimer(); // Первый запуск при монтировании
 
         // --- ПЕРЕМЕННЫЕ И ХРАНИЛИЩЕ ДЛЯ СЧЕТЧИКА ОТПУСКА ---
         let countdownInterval;
@@ -2345,14 +2650,6 @@
         let animationId = null;
         let isCelebrating = false;
 
-        // ПУТЬ К ПЕСНЕ:
-        // Если вы хотите запустить песню в момент салюта, скопируйте её в папку с сайтом
-        // (например: "welcome_home.mp3") и раскомментируйте этот блок кода:
-        /*
-        const celebrationAudio = new Audio('welcome_home.mp3'); 
-        celebrationAudio.loop = true;
-        */
-
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -2506,12 +2803,6 @@
             setTimeout(() => {
                 canvasContainer.style.opacity = '1';
                 
-                // Запуск музыки:
-                /*
-                celebrationAudio.currentTime = 0;
-                celebrationAudio.play().catch(e => console.log("Музыка включится после тача"));
-                */
-
                 celebrationTitle.style.opacity = '1';
                 celebrationTitle.style.transform = 'scale(1)';
 
@@ -2542,11 +2833,6 @@
             celebrationSubtitle.style.opacity = '0';
             celebrationSubtitle.style.transform = 'translateY(30px)';
             celebrationDesc.style.opacity = '0';
-
-            // Остановка музыки:
-            /*
-            celebrationAudio.pause();
-            */
 
             canvasContainer.style.opacity = '0';
             setTimeout(() => {
